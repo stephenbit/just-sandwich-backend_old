@@ -1,7 +1,6 @@
 package com.example.justsandwich.models;
 import javax.persistence.*;
-import java.util.Calendar;
-import java.util.Date;
+import java.text.SimpleDateFormat;
 
 @Entity
 @Table(name = "bookings")
@@ -15,7 +14,7 @@ public class Sandwich {
     private String name;
 
     @Column
-    private Calendar dateAdded;
+    private SimpleDateFormat dateAdded;
 
     @Column
     private double price;
@@ -24,17 +23,17 @@ public class Sandwich {
     private int photoId;
 
     @Column
-    private Integer rating;
+    private double rating;
 
     @Column
     private int numberSold;
 
     public Sandwich(
             String name,
-            Calendar dateAdded,
+            SimpleDateFormat dateAdded,
             double price,
             int photoId,
-            Integer rating,
+            double rating,
             int numberSold
     ) {
         this.name = name;
@@ -52,11 +51,11 @@ public class Sandwich {
         this.name = name;
     }
 
-    public Calendar getDateAdded() {
+    public SimpleDateFormat getDateAdded() {
         return dateAdded;
     }
 
-    public void setDateAdded(Calendar dateAdded) {
+    public void setDateAdded(SimpleDateFormat dateAdded) {
         this.dateAdded = dateAdded;
     }
 
@@ -76,11 +75,11 @@ public class Sandwich {
         this.photoId = photoId;
     }
 
-    public Integer getRating() {
+    public double getRating() {
         return rating;
     }
 
-    public void setRating(Integer rating) {
+    public void setRating(double rating) {
         this.rating = rating;
     }
 
